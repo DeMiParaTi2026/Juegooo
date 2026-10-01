@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Super 16 Arcade Console UI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary":"#2d009d","background":"#13121b","on-error-container":"#ffdad6","on-secondary-fixed-variant":"#454558","surface-container":"#201e28","tertiary-container":"#00a572","outline-variant":"#474554","secondary":"#c6c4dc","error":"#ffb4ab","primary-fixed":"#e5deff","surface-variant":"#35343e","on-secondary":"#2e2f41","secondary-fixed":"#e2e0f9","surface-container-high":"#2a2933","tertiary":"#4edea3","secondary-container":"#47475b","inverse-surface":"#e5e0ee","surface-container-lowest":"#0e0d16","tertiary-fixed-dim":"#4edea3","outline":"#928e9f","on-tertiary-fixed-variant":"#005236","inverse-on-surface":"#312f39","on-tertiary":"#003824","surface":"#13121b","on-secondary-fixed":"#191a2b","surface-tint":"#c8bfff","tertiary-fixed":"#6ffbbe","surface-container-low":"#1c1a24","on-tertiary-container":"#00311f","on-surface-variant":"#c9c4d6","on-tertiary-fixed":"#002113","on-primary-container":"#26008b","on-primary-fixed":"#190064","on-primary-fixed-variant":"#442bb5","inverse-primary":"#5c47cd","surface-bright":"#3a3842","primary":"#c8bfff","error-container":"#93000a","on-error":"#690005","surface-dim":"#13121b","secondary-fixed-dim":"#c6c4dc","primary-fixed-dim":"#c8bfff","on-background":"#e5e0ee","surface-container-highest":"#35343e","on-surface":"#e5e0ee","on-secondary-container":"#b7b6ce","primary-container":"#907eff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"2.5rem","space-lg":"1.5rem","gutter-desktop":"2rem","margin-tablet":"2rem","gutter":"1rem","gutter-tablet":"1.5rem","space-md":"1rem","margin-desktop":"3rem","margin":"1rem"},fontFamily:{"label-lg":["Space Mono"],"headline-xl":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"],"label-sm":["Space Mono"],"headline-lg":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"label-md":["Space Mono"],"body-sm":["Space Mono"],"body-lg":["Space Mono"],"headline-md":["Space Grotesk"],"body-md":["Space Mono"],"headline-sm":["Space Grotesk"]},fontSize:{"label-lg":["13px",{lineHeight:"16px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-sm":["9px",{lineHeight:"12px",letterSpacing:"0.12em",fontWeight:"700"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"0em",fontWeight:"700"}],"label-md":["11px",{lineHeight:"14px",letterSpacing:"0.1em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.01em",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"0em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"0.02em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface min-h-screen relative selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_0_0_#0e0d16]"><div class="bg-surface-container-low px-margin-desktop py-space-xs flex items-center justify-between border-b border-surface-variant"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#4edea3] animate-pulse"></span><span class="font-label-sm text-label-sm uppercase text-tertiary">16-BIT CHIPSET READY</span></div><span class="text-outline-variant font-label-sm text-label-sm">|</span><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#c8bfff]"></span><span class="font-label-sm text-label-sm uppercase text-secondary">STEREO SOUND [DSP-1]</span></div><span class="text-outline-variant font-label-sm text-label-sm">|</span><span class="font-label-sm text-label-sm uppercase text-on-surface-variant">SAVE SLOTS: 4/10 (SRAM OK)</span></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[14px] text-tertiary">tv</span><span class="font-label-sm text-label-sm text-on-surface">CRT FILTER: ON</span></button><button class="flex items-center gap-space-xs px-space-xs py-0.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[14px] text-primary">volume_up</span><span class="font-label-sm text-label-sm text-on-surface">SFX: MAX</span></button></div></div><div class="h-20 max-w-[1440px] mx-auto px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-md"><img alt="Super 16 Arcade Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XhdGvHp8nYrreeBtTAQiE3e_FGJu-0tFqhpqtZkcwlwvrbjefbQ7ySGz9st5CS-frS8b5IY_TjHYaBGPAdqZEVEZ63MeXTW0QX5gjkn0qHjafgbMglBGwpcmjA_M_Qb7Rxj_VggS6mgVYv_Lp3o6Qt8LmOJlGxle9JKh8sPWGAOK1IvQPPRwGe0rpw671F9l9YS8z_P0s7TEJRdo8rVJDAPAvsE7R1fiVFrYAMfYGU6jevVwalUq6T5pY"/><span class="font-headline-md text-headline-md tracking-tight uppercase text-on-surface hidden sm:inline-block">SUPER 16</span></div><nav class="flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary-container shadow-[3px_3px_0_0_#0e0d16]"><a class="font-label-md text-label-md uppercase px-space-md py-space-sm rounded transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface" data-path="catalogo-de-juegos" href="#">CATÁLOGO DE JUEGOS</a><a aria-current="page" class="font-label-md uppercase px-space-md py-space-sm rounded transition-all bg-primary-container text-on-primary-container shadow-[3px_3px_0_0_#0e0d16]" data-path="sala-arcade-crt" href="#">SALA ARCADE CRT</a><a class="font-label-md text-label-md uppercase px-space-md py-space-sm rounded transition-all text-on-surface-variant hover:bg-surface-container hover:text-on-surface" data-path="memorias-guias" href="#">MEMORIAS &amp; GUÍAS</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex flex-col items-end"><span class="font-label-sm text-label-sm text-primary uppercase">PAL / 60HZ</span><span class="font-label-sm text-label-sm text-on-surface-variant">CONSOLE ID: #0429</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-28 pb-16 bg-surface min-h-[calc(100vh-48px)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1440px] mx-auto px-margin-desktop py-space-md">
+<!-- Top Meta Context Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low px-space-lg py-space-sm rounded-lg shadow-md mb-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-sm animate-pulse"></span>
+<span class="font-label-md text-label-md uppercase text-tertiary">SESSION ACTIVE // CHRONO AETERNA [REV 1.2]</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">|</span>
+<span class="font-label-sm text-label-sm text-secondary">CORE: S-SMP 16-BIT AUDIO [DSP ACTIVE]</span>
+<span class="font-label-sm text-label-sm text-outline">|</span>
+<span class="font-label-sm text-label-sm text-primary">FPS: 60.03 / NTSC 240p</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-[16px] text-tertiary">memory</span>
+<span class="font-label-sm text-label-sm text-on-surface">VRAM: 64KB (OK)</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-[16px] text-primary">speed</span>
+<span class="font-label-sm text-label-sm text-on-surface">LATENCY: 1.2ms</span>
+</div>
+</div>
+</div>
+<!-- Main Arcade Station Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Center & Left: The Realistic 90s CRT Television Chassis -->
+<div class="lg:col-span-8 flex flex-col items-center">
+<!-- CRT Plastic Monitor Exterior -->
+<div class="w-full bg-surface-variant rounded-xl p- space-md sm:p-space-lg shadow-xl relative overflow-hidden">
+<!-- Top Chassis Vent Indentations -->
+<div class="flex justify-between items-center px-space-md pb-space-sm">
+<div class="flex items-center gap-1.5 opacity-60">
+<span class="w-12 h-1 bg-surface-container-lowest rounded-full"></span>
+<span class="w-12 h-1 bg-surface-container-lowest rounded-full"></span>
+<span class="w-12 h-1 bg-surface-container-lowest rounded-full"></span>
+<span class="w-12 h-1 bg-surface-container-lowest rounded-full"></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold tracking-widest uppercase">TRINITRON PRO-16</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</div>
+<div class="flex items-center gap-1.5 opacity-60">
+<span class="w-12 h-1 bg-surface-container-lowest rounded-full"></span>
+<span class="w-12 h-1 bg-surface-container-lowest rounded-full"></span>
+<span class="w-12 h-1 bg-surface-container-lowest rounded-full"></span>
+<span class="w-12 h-1 bg-surface-container-lowest rounded-full"></span>
+</div>
+</div>
+<!-- Screen Bezel Sub-Frame with Curved Inner Corners -->
+<div class="relative bg-surface-container-lowest p-space-sm sm:p-space-md rounded-xl shadow-inner">
+<!-- CRT Screen Container (Curvature Mask & Phosphor Layer) -->
+<div class="relative w-full aspect-[4/3] bg-[#07060c] rounded-[28px] overflow-hidden shadow-2xl flex flex-col justify-between p-space-md select-none transition-all duration-300" id="crt-screen">
+<!-- Scanline Screen Overlay Canvas (CSS-based) -->
+<div class="absolute inset-0 pointer-events-none z-30 opacity-40 mix-blend-overlay" id="crt-filter-overlay" style="background: repeating-linear-gradient(0deg, rgba(0,0,0,0.55) 0px, rgba(0,0,0,0.55) 1.5px, transparent 1.5px, transparent 3px);"></div>
+<!-- Glass Vignette & Curved Reflection Mask -->
+<div class="absolute inset-0 pointer-events-none z-20 shadow-[inset_0_0_60px_rgba(0,0,0,0.9),inset_0_0_15px_rgba(200,191,255,0.1)] rounded-[26px]"></div>
+<!-- Phosphor RGB Glow Layer -->
+<div class="absolute inset-0 pointer-events-none z-10 bg-radial from-transparent via-transparent to-black/60"></div>
+<!-- GAME VIEWPORT -->
+<!-- 1. Pixel Art In-Game HUD -->
+<div class="relative z-20 flex items-center justify-between gap-space-sm text-on-surface bg-surface-container-lowest/80 px-space-md py-space-xs rounded shadow-sm">
+<!-- Player Lives -->
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">1P</span>
+<div class="flex items-center gap-1">
+<span class="w-3.5 h-3.5 bg-primary-container rounded-xs inline-block shadow-sm"></span>
+<span class="w-3.5 h-3.5 bg-primary-container rounded-xs inline-block shadow-sm"></span>
+<span class="w-3.5 h-3.5 bg-primary-container rounded-xs inline-block shadow-sm"></span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary ml-1">x3</span>
+</div>
+<!-- HP / MP Segmented Gauges -->
+<div class="flex flex-col gap-1 items-center">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-[8px] text-error font-bold leading-none">HP</span>
+<div class="flex gap-0.5">
+<span class="w-2.5 h-2 bg-error rounded-xs"></span>
+<span class="w-2.5 h-2 bg-error rounded-xs"></span>
+<span class="w-2.5 h-2 bg-error rounded-xs"></span>
+<span class="w-2.5 h-2 bg-error rounded-xs"></span>
+<span class="w-2.5 h-2 bg-error rounded-xs"></span>
+<span class="w-2.5 h-2 bg-surface-container-highest rounded-xs"></span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-[8px] text-tertiary font-bold leading-none">MP</span>
+<div class="flex gap-0.5">
+<span class="w-2.5 h-1.5 bg-tertiary rounded-xs"></span>
+<span class="w-2.5 h-1.5 bg-tertiary rounded-xs"></span>
+<span class="w-2.5 h-1.5 bg-tertiary rounded-xs"></span>
+<span class="w-2.5 h-1.5 bg-surface-container-highest rounded-xs"></span>
+</div>
+</div>
+</div>
+<!-- Score Counter -->
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-wider">SCORE</span>
+<span class="font-label-md text-label-md text-on-surface tracking-widest font-bold" id="game-score">048250</span>
+</div>
+<!-- Time Left -->
+<div class="flex flex-col items-center">
+<span class="font-label-sm text-[9px] text-outline uppercase tracking-wider">TIME</span>
+<span class="font-label-md text-label-md text-tertiary font-bold" id="game-time">248</span>
+</div>
+<!-- Mana Crystals / Coins -->
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">diamond</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">x99</span>
+</div>
+</div>
+<!-- 2. Pixel Art Gameplay Canvas Layer -->
+<div class="absolute inset-0 z-0 overflow-hidden flex flex-col justify-end">
+<!-- Deep Sky & Parallax Cosmic Background with 2 Moons -->
+<div class="absolute inset-0 bg-gradient-to-b from-[#09071a] via-[#1b103c] to-[#3a1d63]">
+<!-- Dual Pixel Moons -->
+<div class="absolute top-10 left-16 w-14 h-14 rounded-full bg-primary-fixed opacity-75 shadow-lg flex items-center justify-center">
+<div class="w-4 h-4 rounded-full bg-primary-container/40 absolute -top-1 right-2"></div>
+</div>
+<div class="absolute top-16 left-32 w-7 h-7 rounded-full bg-tertiary-fixed opacity-60 shadow-md"></div>
+<!-- Twinkling Pixel Stars (inline SVG cluster) -->
+<svg class="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#fff" height="2" width="2" x="15%" y="18%"></rect>
+<rect fill="#c8bfff" height="3" width="3" x="42%" y="12%"></rect>
+<rect fill="#fff" height="2" width="2" x="75%" y="22%"></rect>
+<rect fill="#6ffbbe" height="3" width="3" x="88%" y="15%"></rect>
+<rect fill="#fff" height="2" width="2" x="62%" y="35%"></rect>
+<rect fill="#c8bfff" height="3" width="3" x="25%" y="40%"></rect>
+</svg>
+<!-- Distant Floating Island Silhouette -->
+<div class="absolute bottom-32 left-1/4 w-72 h-16 bg-[#231245] rounded-full opacity-80 blur-[0.5px]"></div>
+</div>
+<!-- Mid-ground: Celestial Temple Ruins & Alien Flora -->
+<div class="relative w-full h-48 flex items-end justify-between px-space-xl">
+<!-- Floating Left Platform -->
+<div class="w-40 h-8 bg-surface-container-high rounded-t shadow-md relative -bottom-2 flex flex-col">
+<div class="h-2 bg-tertiary-container rounded-t"></div>
+<div class="h-1 bg-primary/20"></div>
+</div>
+<!-- Floating Right Platform -->
+<div class="w-48 h-10 bg-surface-container-high rounded-t shadow-md relative -bottom-4 flex flex-col">
+<div class="h-2.5 bg-tertiary-container rounded-t"></div>
+<div class="h-1 bg-primary/20"></div>
+</div>
+</div>
+<!-- Foreground Battle Stage Ground -->
+<div class="relative w-full h-24 bg-surface-container-lowest z-10 flex flex-col">
+<!-- Stepped Grass/Rune Edge -->
+<div class="w-full h-3 bg-tertiary-container"></div>
+<div class="w-full h-2 bg-on-tertiary-fixed-variant"></div>
+<div class="w-full h-full bg-surface-container-low flex items-center justify-around px- space-md opacity-30">
+<span class="w-16 h-2 bg-surface-variant rounded"></span>
+<span class="w-24 h-2 bg-surface-variant rounded"></span>
+<span class="w-12 h-2 bg-surface-variant rounded"></span>
+</div>
+</div>
+<!-- ACTIVE SPRITES ON SCREEN (Hero vs Mech Golem Boss) -->
+<div class="absolute bottom-20 left-12 sm:left-24 z-20 flex flex-col items-center group transition-transform duration-150" id="hero-sprite">
+<!-- Dialogue / Action State Pip -->
+<span class="font-label-sm text-[8px] bg-primary-container text-on-primary-container px-1 py-0.5 rounded shadow mb-1">AETERNA</span>
+<!-- 16-Bit Hero Sprite Art (CSS & SVG Pixelated Construction) -->
+<div class="relative w-16 h-20 flex items-center justify-center">
+<!-- Energy Blade Glow -->
+<div class="absolute -right-3 top-2 w-2 h-14 bg-tertiary-fixed rounded-sm shadow-md animate-pulse rotate-12"></div>
+<!-- Body Armor: Royal Purple & Gold Highlights -->
+<div class="w-10 h-16 bg-primary-container rounded-sm flex flex-col items-center justify-between p-1 shadow-md">
+<div class="w-6 h-4 bg-tertiary rounded-xs"></div>
+<div class="w-7 h-6 bg-inverse-primary rounded-xs"></div>
+<div class="w-8 h-4 flex justify-between">
+<span class="w-3 h-full bg-secondary-container rounded-xs"></span>
+<span class="w-3 h-full bg-secondary-container rounded-xs"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mech Golem Boss Sprite -->
+<div class="absolute bottom-16 right-8 sm:right-20 z-20 flex flex-col items-center">
+<!-- Boss HP Segment -->
+<div class="flex items-center gap-1 mb-1 bg-surface-container-lowest/80 px-2 py-0.5 rounded">
+<span class="font-label-sm text-[8px] text-error uppercase font-bold">CHRONO GOLEM LV.4</span>
+</div>
+<div class="relative w-28 h-32 flex flex-col items-center justify-end">
+<!-- Core Fire Glow -->
+<div class="absolute inset-x-4 top-8 h-12 bg-gradient-to-t from-error via-tertiary-container to-transparent opacity-80 animate-pulse rounded-full"></div>
+<!-- Golem Chiseled Body Blocks -->
+<div class="w-24 h-24 bg-surface-container-highest rounded-md p-2 flex flex-col items-center justify-between shadow-xl relative z-10">
+<!-- Evil Optical Sensor -->
+<div class="w-16 h-3 bg-surface-container-lowest rounded-sm flex items-center justify-center">
+<span class="w-3 h-2 bg-error rounded-xs animate-ping"></span>
+</div>
+<!-- Iron Chest Core -->
+<div class="w-14 h-8 bg-surface-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[20px]">cyclone</span>
+</div>
+<!-- Steam Fumes -->
+<div class="flex gap-2 w-full justify-around">
+<span class="w-3 h-3 bg-secondary-container rounded-xs"></span>
+<span class="w-3 h-3 bg-secondary-container rounded-xs"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Bottom Screen Footer Overlay (Game Stage Title) -->
+<div class="relative z-20 flex items-center justify-between text-on-surface-variant bg-surface-container-lowest/70 px-space-sm py-1 rounded">
+<span class="font-label-sm text-[8px] tracking-widest uppercase text-tertiary">ACT 03 : TEMPLO CRONOS</span>
+<span class="font-label-sm text-[8px] text-outline">STEREO DSP-1 / 32,768 COLORS</span>
+</div>
+</div>
+</div>
+<!-- Bottom Control Bay: Physical Knobs, Buttons & Power LED -->
+<div class="mt-space-md pt-space-xs flex flex-wrap items-center justify-between gap-space-md px-space-sm">
+<!-- Brand Badge & Speaker Grill -->
+<div class="flex items-center gap-space-lg">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase font-bold">SUPER 16 PRO</span>
+<span class="font-label-sm text-label-sm text-outline">BLACK MATRIX CATHODE RAY TUBE</span>
+</div>
+<div class="hidden sm:grid grid-cols-4 gap-1 opacity-50">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest"></span>
+</div>
+</div>
+<!-- Rotary Knobs & Tuners -->
+<div class="flex items-center gap-space-md">
+<!-- Volume Dial -->
+<div class="flex flex-col items-center">
+<div class="w-9 h-9 rounded-full bg-surface-container-lowest shadow-md flex items-center justify-center cursor-pointer active:scale-95 transition-transform" title="Volumen Analógico">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center shadow-inner">
+<span class="w-1 h-3 bg-primary rounded-full transform -rotate-45"></span>
+</div>
+</div>
+<span class="font-label-sm text-[8px] text-on-surface-variant uppercase mt-1">VOL</span>
+</div>
+<!-- Channel / H-Hold Dial -->
+<div class="flex flex-col items-center">
+<div class="w-9 h-9 rounded-full bg-surface-container-lowest shadow-md flex items-center justify-center cursor-pointer active:scale-95 transition-transform" title="Sintonizador CH">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center shadow-inner">
+<span class="w-1 h-3 bg-tertiary rounded-full transform rotate-30"></span>
+</div>
+</div>
+<span class="font-label-sm text-[8px] text-on-surface-variant uppercase mt-1">CH-03</span>
+</div>
+<!-- Physical Power Toggle & Vibrant Red LED -->
+<div class="flex items-center gap-space-sm pl-space-sm">
+<div class="flex flex-col items-center gap-1">
+<span class="w-2.5 h-2.5 rounded-full bg-error shadow-md animate-pulse"></span>
+<span class="font-label-sm text-[8px] text-error uppercase font-bold tracking-tighter">POWER</span>
+</div>
+<button class="w-10 h-10 rounded-lg bg-surface-container-lowest hover:bg-surface-container-high flex items-center justify-center shadow-md active:translate-y-1 transition-all" onclick="toggleCrtPower()" title="Interruptor Físico" type="button">
+<span class="material-symbols-outlined text-on-surface text-[18px]">power_settings_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Super Nintendo Iconic Gamepad Controller Deck -->
+<div class="w-full max-w-[620px] -mt-6 z-30 bg-secondary rounded-[40px] px-space-xl py-space-lg shadow-2xl relative flex flex-col justify-between select-none">
+<!-- Controller Top Shoulder Triggers (L and R) -->
+<div class="absolute -top-3 left-10 right-10 flex justify-between pointer-events-auto">
+<button class="px-6 py-1 bg-surface-variant text-on-surface font-label-sm text-label-sm font-bold rounded-t-lg shadow-sm hover:brightness-110 active:translate-y-0.5 transition-all" type="button">L</button>
+<button class="px-6 py-1 bg-surface-variant text-on-surface font-label-sm text-label-sm font-bold rounded-t-lg shadow-sm hover:brightness-110 active:translate-y-0.5 transition-all" type="button">R</button>
+</div>
+<div class="flex items-center justify-between gap-space-md pt-space-xs">
+<!-- Left Side: Cross D-Pad -->
+<div class="flex flex-col items-center">
+<div class="relative w-28 h-28 flex items-center justify-center">
+<!-- Center Pivot -->
+<div class="absolute w-8 h-8 rounded-full bg-surface-container-lowest z-10"></div>
+<!-- Cross Vertical Wing -->
+<div class="absolute w-9 h-28 bg-surface-variant rounded-md flex flex-col justify-between items-center py-1 shadow-md">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface hover:text-primary active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_drop_up</span>
+</button>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface hover:text-primary active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+</div>
+<!-- Cross Horizontal Wing -->
+<div class="absolute h-9 w-28 bg-surface-variant rounded-md flex justify-between items-center px-1 shadow-md">
+<button class="w-7 h-7 flex items-center justify-center text-on-surface hover:text-primary active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_left</span>
+</button>
+<button class="w-7 h-7 flex items-center justify-center text-on-surface hover:text-primary active:scale-90 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_right</span>
+</button>
+</div>
+</div>
+<span class="font-label-sm text-[8px] text-on-secondary uppercase mt-2 font-bold tracking-widest">DIRECTION</span>
+</div>
+<!-- Center Controls: SELECT & START Pills -->
+<div class="flex flex-col items-center gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm tracking-tighter text-on-secondary font-bold uppercase italic">SUPER 16</span>
+</div>
+<div class="flex items-center gap-space-lg">
+<!-- SELECT Button -->
+<div class="flex flex-col items-center gap-1">
+<button class="w-12 h-4 bg-surface-container-highest rounded-full shadow-inner transform -rotate-25 hover:bg-outline active:scale-95 transition-all" type="button"></button>
+<span class="font-label-sm text-[8px] text-on-secondary font-bold uppercase tracking-wider">SELECT</span>
+</div>
+<!-- START Button -->
+<div class="flex flex-col items-center gap-1">
+<button class="w-12 h-4 bg-surface-container-highest rounded-full shadow-inner transform -rotate-25 hover:bg-outline active:scale-95 transition-all" type="button"></button>
+<span class="font-label-sm text-[8px] text-on-secondary font-bold uppercase tracking-wider">START</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Four Diamond Action Buttons (Super Famicom Legendary Palette) -->
+<div class="flex flex-col items-center">
+<div class="relative w-28 h-28 bg-secondary-fixed-dim/60 rounded-full flex items-center justify-center shadow-inner">
+<!-- X Button (Blue) - Top -->
+<button class="absolute top-2 w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md font-bold shadow-md hover:brightness-110 active:translate-y-1 transition-all" type="button">
+                  X
+                </button>
+<!-- Y Button (Green) - Left -->
+<button class="absolute left-2 w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center font-label-md text-label-md font-bold shadow-md hover:brightness-110 active:translate-y-1 transition-all" type="button">
+                  Y
+                </button>
+<!-- A Button (Red) - Right -->
+<button class="absolute right-2 w-8 h-8 rounded-full bg-error-container text-on-error flex items-center justify-center font-label-md text-label-md font-bold shadow-md hover:brightness-110 active:translate-y-1 transition-all" type="button">
+                  A
+                </button>
+<!-- B Button (Yellow) - Bottom -->
+<button class="absolute bottom-2 w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-md text-label-md font-bold shadow-md hover:brightness-110 active:translate-y-1 transition-all" type="button">
+                  B
+                </button>
+</div>
+<span class="font-label-sm text-[8px] text-on-secondary uppercase mt-2 font-bold tracking-widest">ACTION</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Console Emulation Functions & Control Panel -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Quick State Saves Panel (SRAM & Freeze Slots) -->
+<div class="bg-surface-container rounded-lg p-space-lg shadow-md">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">save</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">SAVE STATES</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">3 SLOTS READY</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Slot 1 (Active) -->
+<div class="bg-surface-container-high rounded p-space-sm flex items-center justify-between hover:bg-surface-variant transition-colors group">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold">01</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">ACT 3 - CRONOS TEMPLE</span>
+<span class="font-label-sm text-label-sm text-outline">HOY, 14:28:10 (HP: 85%)</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 bg-surface-container rounded text-tertiary hover:bg-tertiary hover:text-on-tertiary text-label-sm font-label-sm uppercase transition-colors" title="Cargar Estado" type="button">LOAD</button>
+<button class="px-2 py-1 bg-surface-container rounded text-primary hover:bg-primary-container hover:text-on-primary-container text-label-sm font-label-sm uppercase transition-colors" title="Sobrescribir" type="button">SAVE</button>
+</div>
+</div>
+<!-- Slot 2 -->
+<div class="bg-surface-container-high rounded p-space-sm flex items-center justify-between hover:bg-surface-variant transition-colors group">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold">02</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">ACT 2 - RÍO NEÓN</span>
+<span class="font-label-sm text-label-sm text-outline">AYER, 21:04:42</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 bg-surface-container rounded text-tertiary hover:bg-tertiary hover:text-on-tertiary text-label-sm font-label-sm uppercase transition-colors" type="button">LOAD</button>
+<button class="px-2 py-1 bg-surface-container rounded text-primary hover:bg-primary-container hover:text-on-primary-container text-label-sm font-label-sm uppercase transition-colors" type="button">SAVE</button>
+</div>
+</div>
+<!-- Slot 3 (Empty) -->
+<div class="bg-surface-container-low rounded p-space-sm flex items-center justify-between opacity-80">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded bg-surface-variant text-outline flex items-center justify-center font-label-sm text-label-sm">03</span>
+<span class="font-label-md text-label-md text-outline italic">[SLOT VACÍO]</span>
+</div>
+<button class="px-2 py-1 bg-surface-container rounded text-primary hover:bg-primary-container hover:text-on-primary-container text-label-sm font-label-sm uppercase transition-colors" type="button">GRABAR</button>
+</div>
+</div>
+<!-- Quick Rewind Buffer Button -->
+<div class="mt-space-md pt-space-xs">
+<button class="w-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed-dim hover:text-on-secondary py-space-sm rounded flex items-center justify-center gap-space-xs font-label-md text-label-md uppercase font-bold active:scale-[0.98] transition-all shadow-md" onclick="triggerRewind()" type="button">
+<span class="material-symbols-outlined text-[18px]">fast_rewind</span>
+<span>REBOBINAR (REWIND -10s)</span>
+</button>
+</div>
+</div>
+<!-- CRT Display Shader & Visual Filter Selector -->
+<div class="bg-surface-container rounded-lg p-space-lg shadow-md">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">filter_vintage</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">FILTRO DE VIDEO</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">RASTER 240p</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="filter-btn active-filter bg-primary-container text-on-primary-container p-space-sm rounded flex flex-col items-start gap-1 transition-all shadow-sm" onclick="setVisualFilter('scanlines')" type="button">
+<span class="font-label-sm text-label-sm font-bold uppercase">CRT SCANLINES</span>
+<span class="font-label-sm text-[8px] opacity-80">Fósforo RGB + Curva</span>
+</button>
+<button class="filter-btn bg-surface-container-high text-on-surface hover:bg-surface-variant p-space-sm rounded flex flex-col items-start gap-1 transition-all" onclick="setVisualFilter('sharp')" type="button">
+<span class="font-label-sm text-label-sm font-bold uppercase">PIXEL SHARP</span>
+<span class="font-label-sm text-[8px] text-outline">Matriz Raw 1:1</span>
+</button>
+<button class="filter-btn bg-surface-container-high text-on-surface hover:bg-surface-variant p-space-sm rounded flex flex-col items-start gap-1 transition-all" onclick="setVisualFilter('ntsc')" type="button">
+<span class="font-label-sm text-label-sm font-bold uppercase">SUAVE NTSC</span>
+<span class="font-label-sm text-[8px] text-outline">Blur Compuesto RF</span>
+</button>
+<button class="filter-btn bg-surface-container-high text-on-surface hover:bg-surface-variant p-space-sm rounded flex flex-col items-start gap-1 transition-all" onclick="setVisualFilter('green')" type="button">
+<span class="font-label-sm text-label-sm font-bold uppercase">GAME BOY DMG</span>
+<span class="font-label-sm text-[8px] text-outline">Monocromo Verde</span>
+</button>
+</div>
+</div>
+<!-- Game Genie / Hardware Mod Cheats -->
+<div class="bg-surface-container rounded-lg p-space-lg shadow-md">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">GAME GENIE CODES</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">DIP-SWITCH</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Cheat 1 -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container-low rounded cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">VIDAS INFINITAS</span>
+<span class="font-label-sm text-label-sm text-outline">C264-64DF (NO HIT DECREASE)</span>
+</div>
+<input checked="" class="w-4 h-4 accent-primary rounded bg-surface-container-lowest cursor-pointer" type="checkbox"/>
+</label>
+<!-- Cheat 2 -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container-low rounded cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">SALTO LUNAR / MOON JUMP</span>
+<span class="font-label-sm text-label-sm text-outline">EDB8-770A (HOLD B TO FLOAT)</span>
+</div>
+<input class="w-4 h-4 accent-primary rounded bg-surface-container-lowest cursor-pointer" type="checkbox"/>
+</label>
+<!-- Cheat 3 -->
+<label class="flex items-center justify-between p-space-sm bg-surface-container-low rounded cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">INVENCIBILIDAD PARPADEANTE</span>
+<span class="font-label-sm text-label-sm text-outline">89AA-0863 (SPRITE GHOST)</span>
+</div>
+<input checked="" class="w-4 h-4 accent-primary rounded bg-surface-container-lowest cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Cartridge Bay / Quick Switch Navigation Actions -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-md flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="w-3 h-3 bg-tertiary rounded-xs"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface uppercase">CAMBIAR CARTUCHO</span>
+<span class="font-label-sm text-label-sm text-outline">EXPULSIÓN SEGURA DE SRAM</span>
+</div>
+</div>
+<button class="px-space-md py-space-sm bg-surface-variant hover:bg-primary-container hover:text-on-primary-container text-on-surface font-label-md text-label-md uppercase rounded transition-colors flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">eject</span>
+<span>MENÚ</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for CRT controls and filters
+  function toggleCrtPower() {
+    const screen = document.getElementById('crt-screen');
+    if (screen.classList.contains('brightness-0')) {
+      screen.classList.remove('brightness-0');
+      screen.classList.remove('scale-y-0');
+    } else {
+      screen.classList.add('brightness-0');
+      screen.classList.add('scale-y-0');
+    }
+  }
+
+  function setVisualFilter(type) {
+    const overlay = document.getElementById('crt-filter-overlay');
+    const screen = document.getElementById('crt-screen');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(btn => {
+      btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+      btn.classList.add('bg-surface-container-high', 'text-on-surface');
+    });
+
+    event.currentTarget.classList.remove('bg-surface-container-high', 'text-on-surface');
+    event.currentTarget.classList.add('bg-primary-container', 'text-on-primary-container');
+
+    // Filter logic
+    if (type === 'scanlines') {
+      overlay.style.display = 'block';
+      overlay.style.background = 'repeating-linear-gradient(0deg, rgba(0,0,0,0.55) 0px, rgba(0,0,0,0.55) 1.5px, transparent 1.5px, transparent 3px)';
+      screen.style.filter = 'contrast(1.05) saturate(1.1)';
+    } else if (type === 'sharp') {
+      overlay.style.display = 'none';
+      screen.style.filter = 'none';
+    } else if (type === 'ntsc') {
+      overlay.style.display = 'block';
+      overlay.style.background = 'repeating-linear-gradient(90deg, rgba(255,0,0,0.04) 0px, rgba(0,255,0,0.04) 1px, rgba(0,0,255,0.04) 2px)';
+      screen.style.filter = 'blur(0.6px) saturate(1.25)';
+    } else if (type === 'green') {
+      overlay.style.display = 'block';
+      overlay.style.background = 'rgba(78, 222, 163, 0.2)';
+      screen.style.filter = 'grayscale(1) sepia(0.8) hue-rotate(85deg) contrast(1.2)';
+    }
+  }
+
+  function triggerRewind() {
+    const hero = document.getElementById('hero-sprite');
+    hero.classList.add('-translate-x-12', 'opacity-50');
+    setTimeout(() => {
+      hero.classList.remove('-translate-x-12', 'opacity-50');
+    }, 400);
+  }
+
+  // Periodic score increment simulation
+  setInterval(() => {
+    const scoreElem = document.getElementById('game-score');
+    if (scoreElem) {
+      let current = parseInt(scoreElem.innerText, 10);
+      current += 10;
+      scoreElem.innerText = current.toString().padStart(6, '0');
+    }
+  }, 2000);
+</script></main><footer class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md border-t border-surface-variant/40"><div class="max-w-[1440px] mx-auto px-margin-desktop h-12 flex items-center justify-between"><div class="flex items-center gap-space-lg overflow-x-auto"><div class="flex items-center gap-space-xs"><span class="w-5 h-5 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary font-label-sm text-label-sm font-bold shadow-[1px_1px_0_0_#000000]">A</span><span class="font-label-sm text-label-sm uppercase text-on-surface">Seleccionar</span></div><div class="flex items-center gap-space-xs"><span class="w-5 h-5 rounded-full bg-error-container flex items-center justify-center text-on-error font-label-sm text-label-sm font-bold shadow-[1px_1px_0_0_#000000]">B</span><span class="font-label-sm text-label-sm uppercase text-on-surface">Volver</span></div><div class="flex items-center gap-space-xs"><span class="w-5 h-5 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-label-sm text-label-sm font-bold shadow-[1px_1px_0_0_#000000]">X</span><span class="font-label-sm text-label-sm uppercase text-on-surface">Manual</span></div><div class="flex items-center gap-space-xs"><span class="w-5 h-5 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-sm text-label-sm font-bold shadow-[1px_1px_0_0_#000000]">Y</span><span class="font-label-sm text-label-sm uppercase text-on-surface">Favoritos</span></div><div class="flex items-center gap-space-xs pl-space-sm"><span class="px-1.5 h-4 rounded bg-surface-variant flex items-center justify-center text-on-surface font-label-sm text-[8px] font-bold tracking-widest shadow-[1px_1px_0_0_#000000]">START</span><span class="font-label-sm text-label-sm uppercase text-on-surface">Iniciar</span></div></div><div class="hidden md:flex items-center gap-space-sm"><span class="w-2 h-2 rounded bg-tertiary"></span><span class="font-label-sm text-label-sm uppercase text-on-surface-variant">SRAM AUTO-SAVE: ACTIVO</span></div></div></footer></body></html>
